@@ -1,0 +1,27 @@
+#pictures_list
+  = render :partial => 'admin/pictures/notice' 
+  .grey_box
+    .clear
+    - if @pictures.empty? 
+      .padding.text_center= 'No record'
+    - else 
+      - @pictures.each do |picture| 
+        .admin_picture_box{:id => "picture_#{picture.id}"}
+          .category
+            = link_to picture.picture_category.short_name_en, search_admin_pictures_path(:s => picture.picture_category.id), :title => "Show pictures in album #{picture.picture_category.short_name_en}" 
+          .picture= link_to image_tag(picture.photo.url(:thumb)), "/images/#{picture.photo.url(:large)}", :rel => "lightbox[all]", :title => "Show picture"
+          .actions
+            = link_to_remote image_tag('/images/back/zoom.png', :border => 0), :url => admin_picture_path(picture), :method => :get, :html => {:title => "Show picture informations"} 
+            = link_to_remote image_tag('/images/back/pencil.png', :border => 0), :url => edit_admin_picture_path(picture), :method => :get, :html => {:title => "Edit picture"} 
+            = link_to_remote image_tag('/images/back/delete.png', :border => 0), :url => admin_picture_path(picture, :page => params[:page]), :confirm => 'Are you sure?', :method => :delete, :html => {:title => "Delete picture"} 
+    .clear
+    - if params[:picture_id]
+      :javascript
+        $($("#picture_#{params[:picture_id]}").effect("pulsate", { times:5 }, 500));
+      - params.delete(:picture_id)
+    - if @pictures.total_pages > 1
+      %hr
+      = will_paginate @pictures
+      .entries_infos{:style => "text-align:center;margin-bottom:5px"}
+        = page_entries_info @pictures
+

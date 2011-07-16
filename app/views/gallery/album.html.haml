@@ -1,0 +1,18 @@
+#gallery
+  #gallery_title
+    = @category.send("name_#{session[:locale]}")
+    #back_to_gallery
+      = link_to '< '+t(:back_to_gallery), gallery_path, :rel => "fancybox"
+  %hr
+  #pictures_list
+    .clear
+    - if @pictures.empty? 
+      .padding.text_center= 'No record'
+    - else 
+      - @pictures.each do |picture| 
+        .picture_box
+          .picture.album= link_to image_tag(picture.photo.url(:thumb)), "/images/#{picture.photo.url(:large)}", :rel => "lightbox[all]", :title => "Show picture"
+    .clear
+
+= javascript_tag Picture.set_lightbox
+= javascript_tag("$('a[rel=fancybox]').fancybox({'overlayColor'	: '#212C23'});")  

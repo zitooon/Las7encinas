@@ -1,0 +1,24 @@
+.grey_box
+  .left.margin
+    %p
+      %b= 'Code:'
+      =h @invitation.code
+    %p
+      %b= 'Expires at:'
+      =h @invitation.expires_at.strftime('%D - %R')
+  .left.margin
+    %p
+      %b= 'Nb connections:'
+      =h @invitation.nb_connections
+    %p
+      %b= 'Nb pages seen:'
+      =h @invitation.nb_pages_seen
+  .left.margin
+    %p
+      %b= 'Comment:'
+      =simple_format @invitation.comment
+    %p
+      = link_to_remote 'Edit', :url => edit_admin_invitation_path(@invitation), :method => :get
+      = '|' 
+      = link_to_remote 'Back', :url => admin_invitations_path, :method => :get
+  .clear

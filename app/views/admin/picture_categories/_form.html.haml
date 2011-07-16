@@ -1,0 +1,23 @@
+%p                        
+  = f.label 'Symbol' 
+  %br/                    
+  = f.text_field :symbol 
+%p
+  = f.label 'English name'
+  %br/
+  = f.text_field :name_en 
+%p                        
+  = f.label 'Spanish name'
+  %br/                    
+  = f.text_field :name_es 
+%p                        
+  = f.label 'French name' 
+  %br/                    
+  = f.text_field :name_fr 
+%p                        
+  = f.label :position     
+  %br/                    
+  = f.text_field :position
+%p                        
+  = f.label 'Show in gallery'     
+  = f.check_box :in_gallery

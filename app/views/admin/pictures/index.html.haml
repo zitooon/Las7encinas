@@ -1,0 +1,19 @@
+#picture_categories_container.left{:style => 'width:230px'}
+  .title_box
+    = 'Albums'
+  #picture_categories    
+    = render :partial => 'admin/picture_categories/list' 
+
+#pictures_container.left{:style => 'width:612px;padding-left:16px'}
+  .title_box
+    = 'Pictures' 
+    %small
+      = link_to_remote 'Show all', :url => admin_pictures_path, :method => :get 
+      = '|' 
+      = link_to_remote 'Show by album', :url => albums_admin_pictures_path, :method => :get 
+      = '|' 
+      = link_to_remote 'Upload a new picture', :url => new_admin_picture_path 
+  #pictures
+    = render :partial => 'list' 
+.clear
+%br/

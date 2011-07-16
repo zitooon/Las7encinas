@@ -1,0 +1,29 @@
+#requests_list
+  = render :partial => 'shared/notice'
+  %table{:cellspacing => 0, :cellpadding => 0}
+    %tr{:height => '24px'}
+      %th{:width => '150px'}= 'Full name'
+      %th= 'Company'
+      %th= 'Phone'
+      %th{:width => '210px'}= 'Email'
+      %th{:width => '160px'}= 'Date'
+      %th{:width => '70px'}
+    - if @requests.empty?
+      = render :partial => 'shared/no_record' 
+    - else 
+      - @requests.each do |request| 
+        %tr{:class => "#{request.is_treated ? 'treated' : 'untreated'}"}
+          %td.text_center=h request.full_name 
+          %td.text_center=h request.company 
+          %td.text_center=h request.phone 
+          %td.text_center=h request.email 
+          %td.text_center=h request.created_at.strftime('%D - %R')
+          %td.text_right
+            = link_to image_tag('/images/back/application_form_add.png', :border => 0), new_admin_invitation_path(:request_id => request.id), :title => "Create an invitation from request" 
+            = link_to_remote image_tag('/images/back/zoom.png', :border => 0), :url => admin_request_path(request), :method => :get, :html => {:title => 'Show request details'}
+            = link_to_remote image_tag('/images/back/delete.png', :border => 0), :url => admin_request_path(request), :confirm => 'Are you sure?', :method => :delete, :html => {:title => 'Delete request'}
+      - if @requests.total_pages > 1
+        %tr
+          %td{:colspan => 6, :style => "text-align:center"}
+            = will_paginate @requests
+            = page_entries_info @requests

@@ -1,0 +1,92 @@
+#menu
+  float: right
+  width: 145px
+  height: 235px
+  overflow: visible
+         
+  ul
+    padding: 0
+    margin-top: 10px
+    li
+      width: 144px
+      height: 20px
+      list-style-type: none
+      padding: 5px 0 0
+      a
+        color: #C4D6BD
+        text-align: center
+        font: 14px Georgia,"Nimbus Sans L",sans-serif
+        text-decoration: none
+        display: block
+        padding-top: 2px
+        font-style: normal
+        &:hover
+          color: #C4D6BD
+          text-decoration: underline        
+        &:visited
+          color: #C4D6BD                    
+      a.vertical_menu
+        width: 144px
+        height: 25px
+      
+  ul.sub_menu
+    margin-top: 0
+    z-index: 300
+    padding: 2px 0px 7px
+    border: 1px solid #C4D6BD
+    margin: 6px 0 0 15px
+    width: 155px
+    li
+      width: 100%
+      height: 15px
+      list-style-type: none
+      text-align: left 
+      padding: 3px
+      a.sub_vertical_menu
+        height: 15px
+        color: #C4D6BD
+        text-decoration: none
+        &:hover
+          color: #C4D6BD
+          text-decoration: underline
+        &:visited
+          color: #C4D6BD                    
+
+#footer_menu
+  float: left
+  height: 44px
+
+  ul
+    padding: 0
+    margin: 0
+    li
+      height: 43px
+      list-style-type: none
+      float: left
+      width: 147px
+      a
+        width: 147px
+        height: 44px
+        display: block
+        text-align: center
+        padding-top: 14px        
+        color: #C4D6BD
+        font: 14px Georgia,"Nimbus Sans L",sans-serif
+        text-decoration: none
+        &:hover
+          color: #C4D6BD
+          text-decoration: underline                  
+        &:visited
+          color: #C4D6BD                    
+
+#menu, #footer_menu
+  li.current
+    a
+      font-weight: bold      
+    ul
+      li
+        a
+          font-weight: normal
+      li.sub_current
+        a
+          font-weight: bold

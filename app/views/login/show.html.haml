@@ -1,0 +1,10 @@
+#login_form
+  #login_text 
+    = t(:login_text)
+  = render :partial => 'shared/login_notice'
+  - form_tag login_path do
+    = text_field_tag 'code', params[:code]
+    = submit_tag '', :class => 'ok'
+    .clear
+  #request_code
+    = link_to t(:request_code), new_request_path

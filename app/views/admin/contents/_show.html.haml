@@ -1,0 +1,20 @@
+.grey_box
+  .margin
+    %ul{:class => 'tabs'}
+      %li=link_to 'English', '#tab1'
+      %li=link_to 'Spanish', '#tab2'
+      %li=link_to 'French', '#tab3'
+    .tab_container
+      - {'en' => 'tab1', 'es' => 'tab2', 'fr' => 'tab3'}.each_pair do |k, v|
+        %div{:id => v, :class => 'tab_content center_left'}
+          .title_c
+            =h @content.send("title_#{k}")
+          .text
+            =simple_format @content.send("text_#{k}")
+  #back
+    = link_to_remote 'Edit', :url => edit_admin_content_path(@content), :method => :get
+    = '|' 
+    = link_to_remote 'Back', :url => admin_contents_path, :method => :get
+  .clear
+:javascript
+  init_tabs();

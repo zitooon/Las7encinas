@@ -1,0 +1,7 @@
+- if flash[:notice]
+  .login_notice
+    = flash[:notice]
+- if flash[:error]
+  .login_error
+    = flash[:error]
+- flash[:notice] = flash[:error] = nil

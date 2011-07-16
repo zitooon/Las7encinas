@@ -1,0 +1,32 @@
+= render :partial => 'shared/notice' 
+.grey_box
+  - form_for @picture, :url => admin_pictures_path, :html => { :multipart => true }  do |f| 
+    .left.margin
+      %p
+        = f.label :photo
+        = f.file_field :photo 
+      %p
+        = f.label :picture_category 
+        = f.collection_select :picture_category_id, @picture_categories, :id, :name_en 
+    .right.margin
+      %p
+        %br/
+        %br/
+        = f.submit 'Upload'
+        = '|'
+        = link_to_remote 'Back', :url => admin_pictures_path, :method => :get
+    .margin
+      %ul{:class => 'tabs'}
+        %li=link_to 'Options EN', '#tab1'
+        %li=link_to 'Options ES', '#tab2'
+        %li=link_to 'Options FR', '#tab3'
+      .tab_container
+        - {'en' => 'tab1', 'es' => 'tab2', 'fr' => 'tab3'}.each_pair do |k, v|
+          %div{:id => v, :class => 'tab_content'}
+            %p
+              = f.label "comment_#{k}", "Comment"
+              %br/
+              = f.text_area "comment_#{k}"
+  .clear
+:javascript
+  init_tabs();

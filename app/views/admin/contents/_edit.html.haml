@@ -1,0 +1,9 @@
+= render :partial => 'shared/notice'
+.grey_box
+  - remote_form_for @content, :url => admin_content_path, :method => :put  do |f|
+    = render :partial => 'form', :locals => {:f => f}
+    %p
+      = f.submit 'Update'
+      = '|'
+      = link_to_remote 'Back', :url => admin_contents_path, :method => :get
+  .clear

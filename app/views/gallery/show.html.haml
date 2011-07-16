@@ -1,0 +1,24 @@
+#gallery
+  #gallery_title= t(:gallery)
+  %hr
+  #pictures_list
+    .clear
+    - if @pictures.empty? 
+      .padding.text_center= 'No record'
+    - else 
+      - @ids_array = []
+      - @pictures.each do |picture| 
+        .picture_box
+          .category= link_to picture.picture_category.send("short_name_#{session[:locale]}"), album_gallery_path(:album => picture.picture_category.id), :id => "album_#{picture.picture_category.id}"
+          .picture= link_to image_tag(picture.photo.url(:thumb), :size => "100x100"), album_gallery_path(:album => picture.picture_category.id), :id => "album_picture_#{picture.picture_category.id}"
+        - @ids_array << "album_#{picture.picture_category.id}"
+        - @ids_array << "album_picture_#{picture.picture_category.id}"
+    .clear
+  .clear
+
+:javascript
+  var arr = #{@ids_array.to_json};
+
+  jQuery.each(arr, function() {
+    $("#" + this).fancybox({'overlayColor'	: '#212C23'});
+  });

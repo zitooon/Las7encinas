@@ -1,0 +1,12 @@
+- content_for :left do
+  #text
+    #text_title
+      = @content.send("title_#{session[:locale]}") 
+    #text_content    
+      = @content.send("text_#{session[:locale]}") 
+    :javascript
+      $('#text_content').jScrollPane();      
+          
+- content_for :right do
+  #image
+    - slideshow(@pictures)  

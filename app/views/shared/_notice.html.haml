@@ -1,0 +1,15 @@
+- if flash[:notice]
+  %div{:id => "notice_#{flash[:notice].size.to_s}", :class => 'notice'}
+    .left
+      = flash[:notice]
+    .right
+      = link_to_function '<b>x</b>', "$('#notice_#{flash[:notice].size.to_s}').fadeOut();"
+    .clear
+- if flash[:error]
+  %div{:id => "error_#{flash[:error].size.to_s}", :class => 'error'}
+    .left
+      = flash[:error]
+    .right
+      = link_to_function '<b>x</b>', "$('#error_#{flash[:error].size.to_s}').fadeOut();"
+    .clear
+- flash[:notice] = flash[:error] = nil

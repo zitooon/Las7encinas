@@ -1,0 +1,21 @@
+.left.margin{:style => "padding: 0 80px;"}
+  %p
+    = f.label :symbol
+    = f.text_field :symbol
+  .margin
+    %ul{:class => 'tabs'}
+      %li=link_to 'Options EN', '#tab1'
+      %li=link_to 'Options ES', '#tab2'
+      %li=link_to 'Options FR', '#tab3'
+    .tab_container
+      - {'en' => 'tab1', 'es' => 'tab2', 'fr' => 'tab3'}.each_pair do |k, v|
+        %div{:id => v, :class => 'tab_content'}
+          %p
+            = f.label "title_#{k}", "Title"
+            = f.text_field "title_#{k}", :style => "width:350px"
+          %p{:style => "text-align:center"}
+            = f.text_area "text_#{k}", :id => "ctextf_#{k}"
+            = tiny_mce_tag("ctextf_#{k}")
+.clear
+:javascript
+  init_tabs();

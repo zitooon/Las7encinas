@@ -1,0 +1,107 @@
+.clear-right
+  clear: right
+
+.clear-left
+  clear: left
+
+.clear
+  clear: both
+
+.right
+  float: right
+
+.left
+  float: left
+
+.center
+  margin: auto
+
+.text_center
+  text-align: center
+
+.text_right
+  text-align: right
+
+.text_left
+  text-align: left
+
+.margin
+  margin: 10px
+
+.padding
+  padding: 10px
+
+ul
+  margin: 0
+  padding: 0
+
+a
+  color: #490050
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+label
+  text-align: right
+  margin-left: 10px
+
+select, input[type=radio]
+  width: auto
+
+textarea
+  width: 250px
+  height: 70px
+  margin-left: 10px
+
+input
+  &[type=text], &[type=password], &[type=radio]
+    width: 200px
+    margin-left: 10px
+  &[type=file]
+    width: 270px
+    margin-left: 10px
+  &[type=submit]
+    margin-left: 10px
+
+table
+  border-left: 1px solid #d8d8d8
+  border-right: 1px solid #d8d8d8
+  border-top: 1px solid #d8d8d8
+  width: 100%
+  td
+    background: #f8f8f8 url(/images/back/row_bg.png) repeat-x scroll 0 100%
+    border-bottom: 1px solid #d8d8d8
+    color: #484848
+    padding: 0.5em 0.3em
+  th
+    background: #e6e6e6
+    border-bottom: 1px solid #d8d8d8
+    color: #484848
+
+.notice
+  background: #e7ffdf url(/images/back/tick.png) center no-repeat
+  background-position: 15px 50%
+  border: 1px solid #d8d8d8
+  border-bottom: none
+  text-align: left
+  padding: 5px 7px 5px 45px
+  color: #396900
+  margin: 0px 0px 0px 0px
+  z-index: 3
+  font-size: 100%
+
+.error
+  background: #ffe4df url(/images/back/cross.png) center no-repeat
+  background-position: 15px 50%
+  border: 1px solid #d8d8d8
+  border-bottom: none
+  text-align: left
+  padding: 5px 7px 5px 45px
+  color: red
+  margin: 0px 0px 0px 0px
+  z-index: 3
+  font-size: 100%
+
+.fieldWithErrors
+  input
+    background: #ffe4df

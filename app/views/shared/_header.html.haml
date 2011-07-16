@@ -1,0 +1,5 @@
+- if session[:admin]
+  #front_menu_admin
+    = link_to 'Admin', admin_root_path
+    = '|'
+    = link_to 'Logout', login_path, :method => :delete

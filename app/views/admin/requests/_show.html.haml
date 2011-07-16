@@ -1,0 +1,33 @@
+.grey_box
+  .left.margin
+    %p
+      %b= 'Full name:'
+      =h @request.full_name
+    %p
+      %b= 'Company:'
+      =h @request.company
+    %p
+      %b= 'Creation date:'
+      =h @request.created_at.strftime('%D - %R')
+  .left.margin
+    %p
+      %b= 'Email:'
+      =h @request.email
+    %p
+      %b= 'Phone:'
+      =h @request.phone
+    %p
+      %b= 'Treated:'
+      = check_box_tag :is_treated, '1', @request.is_treated, :onclick => remote_function(:url => toggle_treated_admin_request_path)
+      %span#toggle_treated
+  .left.margin
+    %p
+      %b= 'Message:'
+      =simple_format @request.message
+  .clear
+  .left.margin
+    %p
+      = link_to_remote 'Delete', :url => admin_request_path(@request), :confirm => 'Are you sure?', :method => :delete
+      = '|'
+      = link_to_remote 'Back', :url => admin_requests_path, :method => :get
+  .clear

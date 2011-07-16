@@ -1,0 +1,8 @@
+= render :partial => 'shared/notice' 
+.grey_box
+  - remote_form_for @picture_category, :url => admin_picture_categories_path do |f| 
+    = render :partial => 'form', :locals => {:f => f} 
+    %p
+      = f.submit 'Create'
+      = '|'
+      = link_to_remote 'Back', :url => admin_picture_categories_path, :method => :get  

@@ -1,0 +1,20 @@
+#picture_categories_list
+  = render :partial => 'shared/notice' 
+  %table{:cellspacing => 0, :cellpadding => 0}
+    %tr
+      %th= 'Name'
+      %th= 'Pics'
+      %th= 'Pos'
+      %th
+        .add.text_right= link_to_remote image_tag('/images/back/add.png', :border => 0), :url => new_admin_picture_category_path, :html => {:class => 'text_right', :title => "Add a new album"}
+    - if @picture_categories.empty? 
+      = render :partial => 'shared/no_record' 
+    - else 
+      - @picture_categories.each do |picture_category| 
+        %tr
+          %td.text_center= link_to picture_category.short_name_en, search_admin_pictures_path(:s => picture_category.id)
+          %td.text_center= picture_category.pictures.count.to_s
+          %td.text_center= picture_category.position.to_s
+          %td.text_right
+            = link_to_remote image_tag('/images/back/pencil.png', :border => 0), :url => edit_admin_picture_category_path(picture_category), :method => :get, :html => {:title => "Edit album"} 
+            = link_to_remote image_tag('/images/back/delete.png', :border => 0), :url => admin_picture_category_path(picture_category), :confirm => 'This action will also destroy all pictures of this album ! Are you sure ?', :method => :delete, :html => {:title => "Delete album and pictures associated"} 

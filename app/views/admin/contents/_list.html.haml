@@ -1,0 +1,32 @@
+#contents_list
+  = render :partial => 'shared/notice' 
+  %table{:cellspacing => 0, :cellpadding => 0}
+    %tr
+      %th{:width => '250px'}= 'Symbol'
+      %th{:width => '50px'}= 'EN'
+      %th{:width => '50px'}= 'ES'
+      %th{:width => '50px'}= 'FR'
+      %th= 'Created at'
+      %th= 'Updated at'
+      %th
+        .add.text_right= link_to_remote image_tag('/images/back/add.png', :border => 0), :url => new_admin_content_path, :html => {:class => 'text_right', :title => "Create a new content"}
+    - if @contents.empty? 
+      = render :partial => 'shared/no_record' 
+    - else 
+      - @contents.each do |c| 
+        %tr
+          %td.text_center=h c.symbol
+          %td.text_center= image_tag("/images/back/#{ c.text_en.empty? ? 'cross' : 'tick'}.png", :border => 0)
+          %td.text_center= image_tag("/images/back/#{ c.text_es.empty? ? 'cross' : 'tick'}.png", :border => 0)
+          %td.text_center= image_tag("/images/back/#{ c.text_fr.empty? ? 'cross' : 'tick'}.png", :border => 0)
+          %td.text_center=h c.created_at.strftime('%D - %R')
+          %td.text_center=h c.updated_at.strftime('%D - %R')
+          %td.text_right
+            = link_to_remote image_tag('/images/back/zoom.png', :border => 0), :url => admin_content_path(c), :method => :get, :html => {:title => "Show content"} 
+            = link_to_remote image_tag('/images/back/pencil.png', :border => 0), :url => edit_admin_content_path(c), :method => :get, :html => {:title => "Edit content"} 
+            = link_to_remote image_tag('/images/back/delete.png', :border => 0), :url => admin_content_path(c), :confirm => 'Are you sure?', :method => :delete, :html => {:title => "Delete content"} 
+      - if @contents.total_pages > 1
+        %tr
+          %td{:colspan => 7, :style => "text-align:center"}
+            = will_paginate @contents, :params => { :controller => "contents", :action => "index" }
+            = page_entries_info @contents

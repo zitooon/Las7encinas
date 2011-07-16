@@ -1,0 +1,23 @@
+.grey_box
+  .left.margin
+    %p= link_to image_tag(@picture.photo.url(:thumb), :border => 0), "/images/#{@picture.photo.url(:large)}", :rel => 'lightbox', :title => "Show picture"
+  .left.margin
+    %p
+      %b= 'Category :'
+      = @picture.picture_category.name_en
+    %p 
+      = link_to_remote 'Edit', :url => edit_admin_picture_path(@picture), :method => :get
+      = '|'
+      = link_to_remote 'Back', :url => admin_pictures_path, :method => :get
+  .margin
+    %ul{:class => 'tabs'}
+      %li=link_to 'Comment EN', '#tab1'
+      %li=link_to 'Comment ES', '#tab2'
+      %li=link_to 'Comment FR', '#tab3'
+    .tab_container
+      - {'en' => 'tab1', 'es' => 'tab2', 'fr' => 'tab3'}.each_pair do |k, v|
+        %div{:id => v, :class => 'tab_content'}
+          %p=simple_format @picture.send("comment_#{k}")
+  .clear
+:javascript
+  init_tabs();

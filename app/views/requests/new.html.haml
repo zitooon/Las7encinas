@@ -1,0 +1,19 @@
+#request_form
+  = render :partial => 'shared/login_notice'
+  - form_for @request do |f|
+    %p
+      = f.text_field :full_name, :value => @request.full_name.blank? ? t(:full_name) : @request.full_name, :label => t(:full_name)
+    %p
+      = f.text_field :phone, :value => @request.phone.blank? ? t(:phone) : @request.phone, :label => t(:phone)
+    %p
+      = f.text_field :email, :value => @request.email.blank? ? t(:email) : @request.email, :label => t(:email)
+    %p
+      = f.text_field :company, :value => @request.company.blank? ? t(:company) : @request.company, :label => t(:company)
+    %p
+      = f.text_area :message, :value => @request.message.blank? ? t(:message) : @request.message, :label => t(:message)
+    = f.submit ''
+    = '|'
+    = link_to t(:back), root_path
+.clear
+
+= javascript_tag('RequestForm.init();')

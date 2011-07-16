@@ -1,0 +1,59 @@
+fr:
+  locale_name: "Français"
+  flag: "fr.png"
+  back: "Retour"
+
+  ### LOGIN
+  expired_code: "Désolé, ce code d'invitation a expiré."
+  bad_code: "Désolé, ce code d'invitation n'est pas valide."
+  no_code: "Veuillez entrer votre code d'invitation."
+  request_code: "Demander un code d'invitation"
+  login_text: "Pour visiter l'Alamillo, merci de bien vouloir entrer votre code d'accès :"
+
+  ### REQUEST
+  full_name: "Nom complet"
+  phone: "Téléphone"
+  email: "Adresse mail"
+  message: "Message"
+  company: "Société"
+  send: "Envoyer"
+  request_sent: "Merci, votre message a été envoyé"
+  invalid_request: "Votre demande est incomplete ou invalide, merci de corriger"
+  miss_name: "Nom manquant"
+  miss_phone: "Téléphone manquant"
+  miss_email: "Adresse mail manquante"
+  invalid_email: "Adresse mail invalide"
+  
+  ### MENU
+  introduction: "Accueil"
+  estate: "La propriété"
+  surroundings: "Environnement"
+  accommodation: "Hébergement"
+  gastronomy: "Gastronomie"
+  facilities: "Equipements"
+  activities: "Activités"
+  services: "Services"
+  surrounding_area: "Aux environs"
+    
+  ### FOOTER MENU
+  gallery: "Galerie photos"
+  contact: "Contact"
+  
+  ### MENU LINKS
+  blue_suite: "La Suite Bleue"
+  tennis_house: "Maison du Tennis"
+  main_house: "Maison Principale"
+  meeting_room: "Salle de réunion"
+  garden: "Jardin"
+  gym_spa: "Gym / Spa"
+  games_room: "Salle de jeux"
+  toledo: "Toledo"
+  talavera: "Talavera"
+  trujillo: "Trujillo"
+  caceres: "Cáceres"
+  guadalupe: "Guadalupe"
+  comarca_de_la_vera: "Comarca de la Vera"
+  ruta_conquistadores: "Ruta conquistadores"
+  
+  ### GALLERY
+  back_to_gallery: "Retour galerie"

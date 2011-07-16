@@ -1,0 +1,15 @@
+- if flash[:picture_notice]
+  #picture_notice.notice
+    .left
+      = flash[:picture_notice] 
+    .right
+      = link_to_function '<b>x</b>', '$("#picture_notice").fadeOut();' 
+    .clear
+- if flash[:picture_error]
+  #picture_error.error
+    .left
+      = flash[:picture_error] 
+    .right
+      = link_to_function '<b>x</b>', '$("#picture_error").fadeOut();' 
+    .clear
+- flash[:picture_notice] = flash[:picture_error] = nil 

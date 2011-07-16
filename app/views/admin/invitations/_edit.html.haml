@@ -1,0 +1,27 @@
+= render :partial => 'shared/notice'
+.grey_box
+  - remote_form_for @invitation, :url => admin_invitation_path, :method => :put  do |f|
+    .left.margin
+      %p
+        = f.label :code
+        %br/
+        = f.text_field :code
+      %p
+        = f.label :expires_at
+        %br/
+        = f.datetime_select :expires_at
+    .left.margin
+      %p
+        = f.label :comment
+        %br/
+        = f.text_area :comment, :id => "invitation_comment"
+    .left.margin
+      %p
+        = f.label :admin
+        %br/
+        = f.check_box :is_admin
+      %p
+        = f.submit "Update"
+        = '|' 
+        = link_to_remote 'Back', :url => admin_invitations_path, :method => :get
+  .clear
