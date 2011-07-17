@@ -1,9 +1,10 @@
 class LoginController < ApplicationController
 
   skip_before_filter :is_logged
+  layout 'admin/admin_application'
   
   def show
-    redirect_to introduction_path if logged?
+    redirect_to admin_root_path if logged?
   end
 
   def create
@@ -16,7 +17,7 @@ class LoginController < ApplicationController
           @invitation.nb_connections += 1
           @invitation.save
           loggin
-          redirect_to introduction_path
+          redirect_to admin_root_path
         end
       else
         flash[:error] = t(:bad_code)

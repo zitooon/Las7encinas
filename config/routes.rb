@@ -7,11 +7,10 @@ ActionController::Routing::Routes.draw do |map|
   # Sample resource route within a namespace:
   map.namespace :admin do |admin|
     admin.resources :invitations
-    admin.resources :requests, :only => [:index, :show, :destroy], :member => {:toggle_treated => :post}
     admin.resources :contents
     admin.resources :picture_categories
     admin.resources :pictures, :collection => {:search => :get, :albums => :get}
-    admin.root :controller => 'requests', :action => 'index'
+    admin.root :controller => 'invitations', :action => 'index'
   end
 
   map.root :controller => 'contents', :action => 'introduction'

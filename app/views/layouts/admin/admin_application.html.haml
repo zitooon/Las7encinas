@@ -6,20 +6,16 @@
   %meta{:name => "keywords", :content => "finca el alamillo"}
   %meta{:name => "revisit-after", :content => "10 days"}
   %link{:rel => "shortcut icon", :href => "/favicon.ico"}
-  = stylesheet_link_tag 'site/admin', 'site/slimbox2', :cache => 'all_back'
-  = javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'slimbox2', 'application', 'tiny_mce/jquery.tinymce.js', 'tabs', :cache => 'all_back'
+  = stylesheet_link_tag 'site/login', 'site/admin', 'site/slimbox2', :cache => 'all_back'
+  = javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'slimbox2', 'application', 'tiny_mce/jquery.tinymce.js', 'tabs', 'login', :cache => 'all_back'
 %body
   #container
     #content_container
       #header.admin
         #front_menu_admin
-          = link_to 'Front', root_path
-          = '|'
-          = link_to 'Logout', login_path, :method => :delete
+          = render :partial => "shared/header"
         #admin_menu
           = 'Administration menu :'
-          = link_to 'Requests', admin_requests_path
-          = '|'
           = link_to 'Invitations', admin_invitations_path
           = '|'
           = link_to 'Pictures', admin_pictures_path

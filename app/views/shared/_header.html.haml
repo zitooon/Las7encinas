@@ -1,5 +1,14 @@
 - if session[:admin]
-  #front_menu_admin
+  #top_admin_menu
+    = link_to 'Front', root_path
+    = '|'
     = link_to 'Admin', admin_root_path
     = '|'
     = link_to 'Logout', login_path, :method => :delete
+
+#languages
+  - hash = {:controller => params[:controller], :action => params[:action]}
+  = link_to 'Español', hash.merge(:locale => 'es'), :class => 'espagnol'
+  = link_to 'English', hash.merge(:locale => 'en'), :class => 'english'
+  = link_to 'Français', hash.merge(:locale => 'fr'), :class => 'french'
+.clear

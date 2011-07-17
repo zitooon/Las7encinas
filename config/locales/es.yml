@@ -8,21 +8,7 @@ es:
   bad_code: "Lo sentimos, este código de entrada no es válido."
   no_code: "Por favor, introduzca su código de entrada."
   request_code: "Pedir un código de entrada"
-  login_text: "Para visitar El Alamillo, por favor introduzca su codigo de acceso :"
-
-  ### REQUEST
-  full_name: "Nombre completo"
-  phone: "Número de teléfono"
-  email: "Correo electrónico"
-  message: "Mensaje"
-  company: "Compañía"
-  send: "Enviar"
-  reauest_sent: "Gracias, su mensaje ha sido enviado"
-  invalid_request: "Usted pide es incompleto o inválido, corríjalo por favor"
-  miss_name: "Missing name"
-  miss_phone: "Missing phone number"
-  miss_email: "missing email address"
-  invalid_email: "Invalid email address"
+  login_text: "Para acceder al panel de administración, por favor introduzca su codigo de acceso :"
   
   ### MENU
   introduction: "Inicio"

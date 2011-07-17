@@ -4,25 +4,10 @@ en:
   back: "Back"
 
   ### LOGIN
-  expired_code: "Sorry, this invitation code has expired."
-  bad_code: "Sorry, this invitation code is invalid."
-  no_code: "Please enter your invitation code."
-  request_code: "Request an invitation code"
-  login_text: "To visit the Alamillo, please enter your access code below :"
-
-  ### REQUEST
-  full_name: "Full name"
-  phone: "Phone number"
-  email: "Email address"
-  message: "Message"
-  company: "Company"
-  send: "Send"
-  request_sent: "Thank you, your message has been sent"
-  invalid_request: "You request is incomplete or invalid, please correct"
-  miss_name: "Missing name"
-  miss_phone: "Missing phone number"
-  miss_email: "missing email address"
-  invalid_email: "Invalid email address"
+  expired_code: "Sorry, this code has expired."
+  bad_code: "Sorry, this code is invalid."
+  no_code: "Please enter your code."
+  login_text: "To reach the administration panel, please enter your access code below :"
   
   ### MENU
   introduction: "Introduction"

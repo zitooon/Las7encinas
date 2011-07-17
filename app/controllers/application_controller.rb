@@ -6,21 +6,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
     
   before_filter :set_locale 
-  before_filter :log_invitation_info
-  before_filter :is_logged
 
   private
 
   def is_logged
     redirect_to login_path unless logged?
-  end
-
-  def log_invitation_info
-    if logged?
-      invitation = Invitation.find(session[:invitation_id])
-      invitation.nb_pages_seen += 1
-      invitation.save
-    end
   end
  
   def set_locale
