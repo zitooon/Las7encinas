@@ -18,6 +18,7 @@ class Admin::AdminApplicationController < ActionController::Base
     # if Rails.env == "production"
     return redirect_to login_path if !session[:admin]
     
+    @admin = true
     authenticate_or_request_with_http_basic do |username, password|
       username_hash = Digest::SHA1.hexdigest(username)
       password_hash = Digest::SHA1.hexdigest(password)
