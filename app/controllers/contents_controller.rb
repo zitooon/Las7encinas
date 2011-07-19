@@ -1,7 +1,6 @@
 class ContentsController < ApplicationController
 
-  %w(introduction activities gastronomy contact estate services surroundings surrounding_area \
-  accommodation blue_suite tennis_house main_house meeting_room garden gym_spa games_room).each do |r|
+  %w(spain the_estate olive_trees variety preparation las_7_encinas on_the_table contact).each do |r|
     r = r.to_sym
     define_method(r) do
       @content = Content.for_symbol(r).first

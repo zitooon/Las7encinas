@@ -10,35 +10,17 @@ fr:
   login_text: "Pour accéder au panneau d'administration, merci de bien vouloir entrer votre code d'accès :"
   
   ### MENU
-  introduction: "Accueil"
-  estate: "La propriété"
-  surroundings: "Environnement"
-  accommodation: "Hébergement"
-  gastronomy: "Gastronomie"
-  facilities: "Equipements"
-  activities: "Activités"
-  services: "Services"
-  surrounding_area: "Aux environs"
-    
+  spain: "L'Espagne"
+  the_estate: "La Finca"
+  olive_trees: "Les oliviers"
+  variety: "Varietés"
+  preparation: "Élaboration"
+  las_7_encinas: "Las 7 encinas"
+  on_the_table: "Sur la table"
+       
   ### FOOTER MENU
   gallery: "Galerie photos"
   contact: "Contact"
-  
-  ### MENU LINKS
-  blue_suite: "La Suite Bleue"
-  tennis_house: "Maison du Tennis"
-  main_house: "Maison Principale"
-  meeting_room: "Salle de réunion"
-  garden: "Jardin"
-  gym_spa: "Gym / Spa"
-  games_room: "Salle de jeux"
-  toledo: "Toledo"
-  talavera: "Talavera"
-  trujillo: "Trujillo"
-  caceres: "Cáceres"
-  guadalupe: "Guadalupe"
-  comarca_de_la_vera: "Comarca de la Vera"
-  ruta_conquistadores: "Ruta conquistadores"
-  
+    
   ### GALLERY
   back_to_gallery: "Retour galerie"

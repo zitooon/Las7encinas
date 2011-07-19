@@ -10,35 +10,17 @@ en:
   login_text: "To reach the administration panel, please enter your access code below :"
   
   ### MENU
-  introduction: "Introduction"
-  estate: "The estate"
-  surroundings: "Surroundings"
-  accommodation: "Accomodation"
-  gastronomy: "Gastronomy"
-  facilities: "Facilities"
-  activities: "Activities"
-  services: "Services"
-  surrounding_area: "Surrounding area"
+  spain: "Spain"
+  the_estate: "The estate"
+  olive_trees: "Olive trees"
+  variety: "Variety"
+  preparation: "Preparation"
+  las_7_encinas: "Las 7 encinas"
+  on_the_table: "On the table"
 
   ### FOOTER MENU
   gallery: "Photo gallery"
   contact: "Contact"
 
-  ### MENU LINKS
-  blue_suite: "Blue Suite"
-  tennis_house: "Tennis House"
-  main_house: "Main House"
-  meeting_room: "Meeting room"
-  garden: "Garden"
-  gym_spa: "Gym / Spa"
-  games_room: "Games room"
-  toledo: "Toledo"
-  talavera: "Talavera"
-  trujillo: "Trujillo"
-  caceres: "Cáceres"
-  guadalupe: "Guadalupe"
-  comarca_de_la_vera: "Comarca de la Vera"
-  ruta_conquistadores: "Ruta conquistadores"
-  
   ### GALLERY
   back_to_gallery: "Back to gallery"

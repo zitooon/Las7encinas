@@ -4,42 +4,23 @@ es:
   back: "Espalda"
 
   ### LOGIN
-  expired_code: "Lo sentimos, este código de entrada ha caducado."
-  bad_code: "Lo sentimos, este código de entrada no es válido."
+  expired_code: "Lo sentimos, este código ha caducado."
+  bad_code: "Lo sentimos, este código no es válido."
   no_code: "Por favor, introduzca su código de entrada."
-  request_code: "Pedir un código de entrada"
   login_text: "Para acceder al panel de administración, por favor introduzca su codigo de acceso :"
   
   ### MENU
-  introduction: "Inicio"
-  estate: "La Finca"
-  surroundings: "Entorno"
-  accommodation: "Alojamiento"
-  gastronomy: "Gastronomía"
-  facilities: "Instalaciones"
-  activities: "Actividades"
-  services: "Servicios"
-  surrounding_area: "Cerca de"
+  spain: "España"
+  the_estate: "La Finca"
+  olive_trees: "Los olivos"
+  variety: "Variedades"
+  preparation: "Elaboración"
+  las_7_encinas: "Las 7 encinas"
+  on_the_table: "En la mesa"
 
   ### FOOTER MENU
   gallery: "Gallería de fotos"
   contact: "Contacto"
 
-  ### MENU LINKS
-  blue_suite: "Suite Azul"
-  tennis_house: "Casa del Tenis"
-  main_house: "Casa Grande"
-  meeting_room: "Sala de Reuniones"
-  garden: "Jardìn"
-  gym_spa: "Gimnasio / Spa"
-  games_room: "Sala de juegos"
-  toledo: "Toledo"
-  talavera: "Talavera"
-  trujillo: "Trujillo"
-  caceres: "Cáceres"
-  guadalupe: "Guadalupe"
-  comarca_de_la_vera: "Comarca de la Vera"
-  ruta_conquistadores: "Ruta conquistadores"
-  
   ### GALLERY
   back_to_gallery: "Volver a la galería"
