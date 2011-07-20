@@ -8,14 +8,14 @@ set :application, "Las7encinas"
 task :prod do
   set :type_server, "prod"
   set :servername, "s1.timeisnotfree.com"
-  set :home, "/home/las7encinas/www/"
+  set :home, "/home/lasencinas/www/"
   server servername, :web, :app, :db
   role :app, servername, :memcached => true
   role :web, servername
   role :db,  servername, :primary => true
   set :deploy_to, home
-  set :runner, 'encinas'
-  set :user, "encinas"
+  set :runner, 'lasencinas'
+  set :user, "lasencinas"
   set :branch, "master"
 end
 
