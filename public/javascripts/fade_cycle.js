@@ -6,13 +6,13 @@ function fadeCycle(_dom, _timeout, _transition)
     this.transition = _transition;
 
     this.elems = this.dom.children('.diapo');
+    if(this.elems.size() <= 1)
+      return false;
     this.current = 0;
     this.max = this.elems.length;
     this.elems.each(function(i) {
         if (i)
-        {
-            $(this).hide();
-        }
+          $(this).hide();
     });
 
     this.nextPicture = function()
@@ -20,9 +20,7 @@ function fadeCycle(_dom, _timeout, _transition)
         vthis.elems.eq(vthis.current).fadeOut(vthis.transition);
         vthis.current++;
         if (vthis.current == vthis.max)
-        {
-            vthis.current = 0;
-        }
+          vthis.current = 0;
         vthis.elems.eq(vthis.current).fadeIn(vthis.transition);
     };
 

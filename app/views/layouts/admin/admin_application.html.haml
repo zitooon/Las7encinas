@@ -1,27 +1,27 @@
 !!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
-%head
-  %title= 'Las 7 Encinas'
-  %meta{:name => "description", :content => "Las 7 Encinas"} 
-  %meta{:name => "keywords", :content => "Las 7 Encinas"}
-  %meta{:name => "revisit-after", :content => "10 days"}
-  %link{:rel => "shortcut icon", :href => "/favicon.ico"}
-  = stylesheet_link_tag 'site/login', 'site/admin', 'site/slimbox2', :cache => 'all_back'
-  = javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'slimbox2', 'application', 'tiny_mce/jquery.tinymce.js', 'tabs', 'login', :cache => 'all_back'
-%body
-  #container
-    #content_container
-      #header.admin
-        = render :partial => "shared/header"
-        #admin_menu
-          = 'Administration menu :'
-          = link_to 'Invitations', admin_invitations_path
-          = '|'
-          = link_to 'Pictures', admin_pictures_path
-          = '|'
-          = link_to 'Contents', admin_contents_path
-      #middle
-        = yield
-    .clear
-    #footer.text_center
-      = render :partial => "shared/footer"
+  %head
+    %title= 'Las 7 Encinas'
+    %meta{:name => "description", :content => "Las 7 Encinas"} 
+    %meta{:name => "keywords", :content => "Las 7 Encinas"}
+    %meta{:name => "revisit-after", :content => "10 days"}
+    %link{:rel => "shortcut icon", :href => "/favicon.ico"}
+    = stylesheet_link_tag 'site/login', 'site/admin', 'site/slimbox2', :cache => 'all_back'
+    = javascript_include_tag 'jquery', 'jquery-ui', 'jrails', 'slimbox2', 'application', 'tiny_mce/jquery.tinymce.js', 'tabs', 'login', :cache => 'all_back'
+  %body
+    #container
+      #content_container
+        #header.admin
+          = render :partial => "shared/header"
+          #admin_menu
+            = 'Administration menu :'
+            = link_to 'Invitations', admin_invitations_path
+            = '|'
+            = link_to 'Pictures', admin_pictures_path
+            = '|'
+            = link_to 'Contents', admin_contents_path
+        #middle
+          = yield
+      .clear
+      #footer.text_center
+        = render :partial => "shared/footer"
