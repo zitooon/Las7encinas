@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => 'invitations', :action => 'index'
   end
 
-  map.root :controller => 'contents', :action => 'spain'
+  map.root :controller => 'contents', :action => 'on_the_table'
 
   %w(spain the_estate olive_trees variety preparation las_7_encinas on_the_table contact).each do |r|
     map.send(r.to_sym, r, {:controller => 'contents', :action => r})
