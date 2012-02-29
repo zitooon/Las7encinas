@@ -10,9 +10,15 @@
     .tab_container
       - {'en' => 'tab1', 'es' => 'tab2', 'fr' => 'tab3'}.each_pair do |k, v|
         %div{:id => v, :class => 'tab_content'}
-          %p
+          %p{:style => 'text-align:right; padding-right:80px'}
             = f.label "title_#{k}", "Title"
             = f.text_field "title_#{k}", :style => "width:350px"
+          %p{:style => 'text-align:right; padding-right:80px'}
+            = f.label "page_title_#{k}", "Page title (max 50 chars)"
+            = f.text_field "page_title_#{k}", :style => "width:350px"
+          %p{:style => 'text-align:right; padding-right:80px'}
+            = f.label "page_description_#{k}", "Page description (max 250 chars)"
+            = f.text_field "page_description_#{k}", :style => "width:350px"
           %p{:style => "text-align:center"}
             = f.text_area "text_#{k}", :id => "ctextf_#{k}"
             = tiny_mce_tag("ctextf_#{k}")

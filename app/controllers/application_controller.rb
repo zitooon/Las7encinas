@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  before_filter :set_locale 
+  before_filter :set_locale, :set_keywords 
 
   private
   def default_url_options(options={})
@@ -26,6 +26,17 @@ class ApplicationController < ActionController::Base
       I18n.locale = extract_locale_from_accept_language_header
     end
     session[:locale] = I18n.locale
+  end
+  
+  def set_keywords
+    @keywords = case session[:locale]
+    when :es
+      'Aceite, El alamillo, Aceite de olive, Aceite El alamillo, Aceite de oliva las 7 encinas, El alamillo las 7 encinas, Aceite de oliva El alamillo'
+    when :en
+      'Oil, El alamillo, Olive oil, Oil El Alamillo, Olive oil Las 7 encinas, The Alamillo las 7 encinas, The Alamillo olive oil'
+    when :fr
+      "Huile, El alamillo, Huile d'olive, Huile El alamillo, Huile d’olive las 7 encinas, El alamillo las 7 encinas, Huile d’olive El alamillo"
+    end  
   end
 
   def extract_locale_from_accept_language_header 
