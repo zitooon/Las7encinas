@@ -29,6 +29,8 @@ set :scm_user, "zitooon"  # The server's user for deploys
 set :scm_passphrase, "olivier124"  # The deploy user's password
 set :repository, "git@github.com:zitooon/Las7encinas.git"
 
+set :rake, 'bundle exec rake'
+
 task :uname do
   server servame, :web, :app, :db
   run "uname -a"
