@@ -17,8 +17,8 @@
             = f.label "page_title_#{k}", "Page title (max 50 chars)"
             = f.text_field "page_title_#{k}", :style => "width:350px"
           %p{:style => 'text-align:right; padding-right:80px'}
-            = f.label "page_description_#{k}", "Page description (max 250 chars)"
-            = f.text_field "page_description_#{k}", :style => "width:350px"
+            = f.label "page_description_#{k}", "Page description (max 250 chars)", :style => 'vertical-align: top'
+            = f.text_area "page_description_#{k}", :style => "width:346px"
           %p{:style => "text-align:center"}
             = f.text_area "text_#{k}", :id => "ctextf_#{k}"
             = tiny_mce_tag("ctextf_#{k}")
