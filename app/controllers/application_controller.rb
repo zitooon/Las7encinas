@@ -7,12 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale, :set_keywords 
 
-  private
-  def default_url_options(options={})
-    # logger.info 'salope'
-    {:locale => I18n.locale}#, :tarace => 'lapute'}
-  end
-  
+  private  
   def is_logged
     redirect_to login_path unless logged?
   end
