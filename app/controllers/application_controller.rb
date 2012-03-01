@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
 
   private
   def default_url_options(options={})
-    {:locale => I18n.locale}
+    logger.info 'salope'
+    {:locale => I18n.locale, :tarace => 'lapute'}
   end
   
   def is_logged

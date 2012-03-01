@@ -21,5 +21,5 @@ module MenuHelper
     end
     haml_concat javascript_tag("$('#gallery_link').fancybox({'overlayColor'	: '#212C23'});")  
   end
-  
+    
 end
