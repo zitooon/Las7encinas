@@ -2,6 +2,7 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
   %head
     %title= (@content and !@content.send("page_title_#{session[:locale]}").blank?) ? @content.send("page_title_#{session[:locale]}") : default_page_title
+    %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
     %meta{:name => "description", :content => (@content and !@content.send("page_description_#{session[:locale]}").blank?) ? @content.send("page_description_#{session[:locale]}") : default_page_description} 
     %meta{:name => "keywords", :content => @keywords}
     %meta{:name => "revisit-after", :content => "10 days"}
