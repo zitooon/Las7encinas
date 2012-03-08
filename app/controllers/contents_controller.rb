@@ -11,10 +11,7 @@ class ContentsController < ApplicationController
   end
   
   def index
-    @content = Content.for_symbol(:on_the_table).first
-    @pictures = Picture.from_category(:on_the_table)
-    @pictures = Picture.random.only_in_gallery.all if @pictures.empty?
-    render :action => "show"
+    redirect_to "/en/on_the_table", :status => 301
   end
 
 end
