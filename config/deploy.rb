@@ -1,5 +1,5 @@
 require 'bundler/capistrano'
-require "rvm/capistra"
+require "rvm/capistrano"
 
 ssh_options[:forward_agent] = true
 ssh_options[:paranoid] = false
@@ -47,6 +47,7 @@ namespace :deploy do
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/assets/pictures #{release_path}/public/images/pictures"
   end
 end
 
