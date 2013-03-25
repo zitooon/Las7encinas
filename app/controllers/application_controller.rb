@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
@@ -31,7 +33,7 @@ class ApplicationController < ActionController::Base
     when :en
       'Oil, El alamillo, Olive oil, Oil El Alamillo, Olive oil Las 7 encinas, The Alamillo las 7 encinas, The Alamillo olive oil'
     when :fr
-      "Huile, El alamillo, Huile d'olive, Huile El alamillo, Huile d’olive las 7 encinas, El alamillo las 7 encinas, Huile d’olive El alamillo"
+      "Huile, El alamillo, Huile d'olive, Huile El alamillo, Huile d'olive las 7 encinas, El alamillo las 7 encinas, Huile d'olive El alamillo"
     end  
   end
 

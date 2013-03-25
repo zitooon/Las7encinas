@@ -1,3 +1,6 @@
+require 'bundler/capistrano'
+require "rvm/capistra"
+
 ssh_options[:forward_agent] = true
 ssh_options[:paranoid] = false
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
@@ -7,17 +10,22 @@ set :application, "Las7encinas"
 
 task :prod do
   set :type_server, "prod"
-  set :servername, "s1.timeisnotfree.com"
-  set :home, "/home/lasencinas/www/"
+  set :servername, "5.135.166.174"
+  set :home, "/home/deploy/lasencinas/"
   server servername, :web, :app, :db
-  role :app, servername, :memcached => true
+  role :app, servername
   role :web, servername
   role :db,  servername, :primary => true
   set :deploy_to, home
-  set :runner, 'lasencinas'
-  set :user, "lasencinas"
+  set :runner, 'deploy'
+  set :user, "deploy"
   set :branch, "master"
+  set :keep_releases, 4
+  set :rails_env, 'production'
 end
+
+set :rvm_type, :system
+set :rvm_ruby_string, 'ruby-1.9.3-p392'
 
 set :deploy_via, :remote_cache
 set :use_sudo, false
@@ -25,41 +33,20 @@ set :use_sudo, false
 set :migrate_env, ''
 
 set :scm, "git"
-set :scm_user, "zitooon"  # The server's user for deploys
-set :scm_passphrase, "olivier124"  # The deploy user's password
-set :repository, "git@github.com:zitooon/Las7encinas.git"
-
-set :rake, 'bundle exec rake'
-
-task :uname do
-  server servame, :web, :app, :db
-  run "uname -a"
-end
-
-namespace :bundler do
-  task :create_symlink, :roles => :app do
-    shared_dir = File.join(shared_path, 'bundle')
-    release_dir = File.join(current_release, '.bundle')
-    run("mkdir -p #{shared_dir} && ln -s #{shared_dir} #{release_dir}")
-  end
-
-  task :bundle_new_release, :roles => :app do
-    bundler.create_symlink
-    run "cd #{release_path} && /opt/ruby-enterprise/bin/bundle install --path  #{home}/#{shared_dir}/bundle --without test"
-  end
-end
+set :scm_user, "deploy"  # The server's user for deploys
+set :repository, "git@github.com:zitooon/Alamillo.git"
 
 namespace :deploy do
+  task :start do ; end
+  task :stop do ; end
   desc "Tell Passenger to restart the app."
-  task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
+  task :restart, roles: :app, except: { no_release: true } do
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-    run "ln -nfs #{shared_path}/config/environments/production.rb #{release_path}/config/environments/production.rb"
-    run "ln -nfs #{shared_path}/assets/pictures #{release_path}/public/images/pictures"
   end
 end
 
@@ -74,30 +61,9 @@ namespace :assets do
   end
 end
 
-namespace :memcached do
-  desc "Start memcached"
-  task :start, :roles => [:app], :only => {:memcached => true} do
-    sudo "/etc/init.d/memcached start"
-  end
-  desc "Stop memcached"
-  task :stop, :roles => [:app], :only => {:memcached => true} do
-    sudo "/etc/init.d/memcached stop"
-  end
-  desc "Restart memcached"
-  task :restart, :roles => [:app], :only => {:memcached => true} do
-    sudo  "/etc/init.d/memcached restart"
-  end
-  desc "Flush memcached"
-  task :flush, :roles => [:app], :only => {:memcached => true}  do
-    run "memflush --servers=localhost"
-  end
-end
-
 # HOOKS
 after "deploy:update_code" do
   deploy.symlink_shared
-  bundler.bundle_new_release # if type_server == "preprod"
-  #memcached.flush
 end
 
 # Automatically clean versions by keeping the 5 last versions
