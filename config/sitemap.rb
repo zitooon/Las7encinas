@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://http://las7encinas.elalamillo.com/"
+SitemapGenerator::Sitemap.default_host = "http://www.las7encinas.com/"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.

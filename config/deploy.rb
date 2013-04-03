@@ -34,7 +34,7 @@ set :migrate_env, ''
 
 set :scm, "git"
 set :scm_user, "deploy"  # The server's user for deploys
-set :repository, "git@github.com:zitooon/Alamillo.git"
+set :repository, "git@github.com:zitooon/Las7encinas.git"
 
 namespace :deploy do
   task :start do ; end
