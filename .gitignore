@@ -4,7 +4,6 @@ log/*.log
 tmp/logs/*
 tmp/sass-cache
 tmp/pids/*
-Gemfile.lock
 config/database.yml
 *~
 public/javascripts/all.js
@@ -20,5 +19,4 @@ tmp/
 log/*
 .DS_Store
 *.log
-vendor/ruby/
 .rvmrc
