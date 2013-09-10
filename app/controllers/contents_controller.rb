@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ContentsController < ApplicationController
 
   %w(spain the_estate olive_trees variety preparation las_7_encinas on_the_table contact).each do |r|

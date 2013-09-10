@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Admin::PictureCategoriesController < Admin::AdminApplicationController
 
   around_filter :check_ajax_request

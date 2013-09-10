@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Admin::PicturesController < Admin::AdminApplicationController
 
   around_filter :check_ajax_request, :except => [:index, :albums, :search, :create, :update]
