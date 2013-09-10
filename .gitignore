@@ -20,3 +20,5 @@ log/*
 .DS_Store
 *.log
 .rvmrc
+.ruby-version
+.ruby-gemset
