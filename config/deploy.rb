@@ -8,8 +8,8 @@ default_run_options[:pty] = true  # Must be set for the password prompt from git
 # deploy.rb
 set :application, "Las7encinas"
 
-task :prod do
-  set :type_server, "prod"
+task :production do
+  set :type_server, "production"
   set :servername, "5.135.166.174"
   set :home, "/home/deploy/lasencinas/"
   server servername, :web, :app, :db
