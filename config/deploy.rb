@@ -57,7 +57,7 @@ namespace :assets do
     system "rsync -e ssh -avuzp  #{user}@#{servername}:#{shared_path}/assets/pictures public/images/"
   end
 
-  task :push do    
+  task :push do
     system "rsync -e ssh -avzp --delete-after --exclude-from=.rsyncignore public/images/pictures #{user}@#{servername}:#{shared_path}/assets/"
   end
 end
