@@ -8,15 +8,15 @@ en:
   bad_code: "Sorry, this code is invalid."
   no_code: "Please enter your code."
   login_text: "To reach the administration panel, please enter your access code below :"
-  
+
   ### MENU
-  spain: "Spain"
+  on_the_table: "A perfume on <br/>your table"
+  las_7_encinas: "Our product"
+  olive_trees: "Las 7 Encinas, a <br/>gourmet product"
+  variety: "Health benefits"
   the_estate: "The estate"
-  olive_trees: "Olive trees"
-  variety: "Variety"
+  spain: "Spain"
   preparation: "Preparation"
-  las_7_encinas: "Las 7 encinas"
-  on_the_table: "On the table"
 
   ### FOOTER MENU
   gallery: "Photo gallery"

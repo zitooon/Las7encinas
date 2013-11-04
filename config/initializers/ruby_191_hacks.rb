@@ -9,7 +9,7 @@
  
 # encoding: utf-8
  
-if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("1.9.0")
+if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new("1.9.0")
  
   # Force MySQL results to UTF-8.
   #

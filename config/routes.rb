@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.root :controller => 'contents'
-  
+
   map.connect '/fr', :controller => 'contents', :action => 'on_the_table', :locale => :fr
   map.connect '/en', :controller => 'contents', :action => 'on_the_table', :locale => :en
   map.connect '/es', :controller => 'contents', :action => 'on_the_table', :locale => :es

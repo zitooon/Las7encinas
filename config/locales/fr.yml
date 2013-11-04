@@ -8,19 +8,19 @@ fr:
   bad_code: "Désolé, ce code n'est pas valide."
   no_code: "Veuillez entrer votre code."
   login_text: "Pour accéder au panneau d'administration, merci de bien vouloir entrer votre code d'accès :"
-  
+
   ### MENU
-  spain: "L'Espagne"
+  on_the_table: "Un parfum sur <br/>votre table"
+  las_7_encinas: "Notre produit"
+  olive_trees: "Las 7 Encinas, un <br/>produit gourmet"
+  variety: "Bienfaits pour <br/>la santé"
   the_estate: "La Finca"
-  olive_trees: "Les oliviers"
-  variety: "Varietés"
+  spain: "L'Espagne"
   preparation: "Élaboration"
-  las_7_encinas: "Las 7 encinas"
-  on_the_table: "Sur la table"
-       
+
   ### FOOTER MENU
   gallery: "Galerie photos"
   contact: "Contact"
-    
+
   ### GALLERY
   back_to_gallery: "Retour galerie"
