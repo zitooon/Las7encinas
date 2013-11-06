@@ -11,7 +11,7 @@ class ContentsController < ApplicationController
       render :action => "show"
     end
   end
-  
+
   def index
     redirect_to "/en/on_the_table", :status => 301
   end

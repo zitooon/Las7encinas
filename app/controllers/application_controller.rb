@@ -1,15 +1,12 @@
 # encoding: utf-8
 
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  helper :all
+  protect_from_forgery
 
-  before_filter :set_locale, :set_keywords 
+  before_filter :set_locale, :set_keywords
 
-  private  
+  private
   def is_logged
     redirect_to login_path unless logged?
   end
@@ -25,7 +22,7 @@ class ApplicationController < ActionController::Base
     end
     session[:locale] = I18n.locale
   end
-  
+
   def set_keywords
     @keywords = case session[:locale]
     when :es
@@ -34,12 +31,12 @@ class ApplicationController < ActionController::Base
       'Oil, El alamillo, Olive oil, Oil El Alamillo, Olive oil Las 7 encinas, The Alamillo las 7 encinas, The Alamillo olive oil'
     when :fr
       "Huile, El alamillo, Huile d'olive, Huile El alamillo, Huile d'olive las 7 encinas, El alamillo las 7 encinas, Huile d'olive El alamillo"
-    end  
+    end
   end
 
-  def extract_locale_from_accept_language_header 
+  def extract_locale_from_accept_language_header
     request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first rescue 'en'
-  end 
+  end
 
   protected
   def logged?
